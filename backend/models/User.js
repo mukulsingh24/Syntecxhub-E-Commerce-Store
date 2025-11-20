@@ -1,1 +1,0 @@
-const mongoose = reqire('mongoose');

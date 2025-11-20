@@ -1,4 +1,4 @@
-require('dotenv').config({path: './'})
+require('dotenv').config({ path: './mong.env' });
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
@@ -9,9 +9,9 @@ const port = 5000
 
 mongoose.connect(process.env.MONGO_URI).then(()=>{
     console.log("Database Connected")
-}).catch(err){
+}).catch((err)=>{
     console.log("Database Not Connected",err)
-}
+})
 
 app.listen(port,()=>{
     console.log("Server is Running")
