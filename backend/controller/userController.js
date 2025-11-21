@@ -22,13 +22,14 @@ const RegisterUser = async(req,res)=>{
 }
 
 const LoginUser = async(req,res)=>{
+    try{
     const{email,password} = req.body
     const test = await User.findOne({email})
     if(test){
-        const same = await User.comparePassword(password)
+        const same = await test.comparePassword(password)
         if(same){
-            jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" })
-            res.status(200).json(token,user,{message:"Login Successfull"})
+            const token = jwt.sign({ id: test._id }, process.env.JWT_SECRET, { expiresIn: "1h" })
+            res.status(200).json({token,test,message:"Login Successfull"})
         }
         else{
             res.status(409).json({message:"Invalid User Credentials"})
@@ -37,6 +38,9 @@ const LoginUser = async(req,res)=>{
     }
     else{
         res.status(409).json({message:"User Doesn't Exists"})
+    }}
+    catch(err){
+        res.status(500).json({message:"Error Logging User"})
     }
 }
 
