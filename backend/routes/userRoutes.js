@@ -5,5 +5,5 @@ const{
     RegisterUser
 } = require('../controller/userController')
 
-router.route('/user').post(RegisterUser)
+router.route('/user/register').post(RegisterUser)
 module.exports = router;
