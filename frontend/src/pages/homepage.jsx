@@ -16,7 +16,7 @@ function Home(){
         <div>
             <ul>
             {products.map((item,index) => (
-                <li key={index}>{item.name},{item.price}
+                <li key={index}>{item.name} - {item.price}
                 <button onClick={()=>addtoCart(item)}>Add to Cart</button>
                 </li>
             ))}
