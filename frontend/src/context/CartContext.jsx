@@ -6,8 +6,11 @@ export const CartProvider = ({children}) =>{
         setCart([...cart,product])
         alert("Added to Cart")
     }
+    const clearCart = () =>{
+        setCart([])
+    }
     return(
-        <CartContext.Provider value={{cart,addtoCart}}>
+        <CartContext.Provider value={{cart,addtoCart,clearCart}}>
             {children}
         </CartContext.Provider>
     )
