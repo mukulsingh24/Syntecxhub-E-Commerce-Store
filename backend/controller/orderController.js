@@ -19,14 +19,14 @@ const AddOrderItems = async(req,res)=>{
 
 }
 
-module.exports = {AddOrderItems}
-const getProduct = async(req,res) =>{
+const getAllOrders = async(req,res) =>{
     try{
-        const get = await Product.find({});
-        res.status(200).json({get,message:"Product Recieved"})
-
+        const get = await Order.find({}).populate("user","name email");
+        res.status(200).json({get,message:"Order Recieved"})
+        
     }
     catch(err){
-        res.status(500).json({message:"Error Getting Product"})
+        res.status(500).json({message:"Error Getting Order"})
     }
 }
+module.exports = {AddOrderItems,getAllOrders}
