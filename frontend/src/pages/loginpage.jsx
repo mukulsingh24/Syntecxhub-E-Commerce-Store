@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import axios from 'axios'
+import './loginpage.css';
 
 function Login (){
     const[email,setEmail] = useState("");
@@ -19,13 +20,37 @@ function Login (){
         }
     }
     return(
-        <div>
+        <div className="login-page">
             <div className="login-container">
-                <form onSubmit={handleSubmit}>
-                    <input type="email" placeholder="Enter Email"  onChange={(e)=>setEmail(e.target.value)}/>
-                    <input type="password" placeholder="Enter Password"  onChange={(e)=>setPassword(e.target.value)}/>
-                    <button type="submit">Login</button>
+                <div className="login-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your account to continue shopping</p>
+                </div>
+                <form className="login-form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label>Email Address</label>
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address"  
+                            onChange={(e)=>setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input 
+                            type="password" 
+                            placeholder="Enter your password"  
+                            onChange={(e)=>setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="submit-btn">Sign In</button>
                 </form>
+                <div className="form-divider"><span>or</span></div>
+                <div className="login-footer">
+                    Don't have an account? <a href="/register">Create one now</a>
+                </div>
             </div>
         </div>
     )

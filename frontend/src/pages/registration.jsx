@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios'
 import { Form } from "react-router-dom";
+import './registration.css';
 function Register (){
     const[name,setName] = useState("");
     const[email,setEmail] = useState("");
@@ -17,14 +18,52 @@ function Register (){
         }
     }
     return(
-        <div>
+        <div className="register-page">
             <div className="register-container">
-                <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Enter Name"  onChange={(e)=>setName(e.target.value)} />
-                    <input type="email" placeholder="Enter Email"  onChange={(e)=>setEmail(e.target.value)}/>
-                    <input type="password" placeholder="Enter Password"  onChange={(e)=>setPassword(e.target.value)}/>
-                    <button type="submit">Register</button>
+                <div className="register-header">
+                    <h1>Create Account</h1>
+                    <p>Join our community and start shopping today</p>
+                </div>
+                <form className="register-form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label>Full Name</label>
+                        <input 
+                            type="text" 
+                            placeholder="Enter your full name"  
+                            onChange={(e)=>setName(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Email Address</label>
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address"  
+                            onChange={(e)=>setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input 
+                            type="password" 
+                            placeholder="Create a strong password"  
+                            onChange={(e)=>setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="terms-agreement">
+                        <input type="checkbox" id="terms" required />
+                        <label htmlFor="terms">
+                            I agree to the <a href="#terms">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit" className="submit-btn">Create Account</button>
                 </form>
+                <div className="form-divider"><span>or</span></div>
+                <div className="register-footer">
+                    Already have an account? <a href="/login">Sign in here</a>
+                </div>
             </div>
         </div>
     )
