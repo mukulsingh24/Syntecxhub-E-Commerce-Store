@@ -41,7 +41,6 @@ This project demonstrates best practices in full-stack development, including se
 - **React Router DOM** - Client-side routing and navigation
 - **Axios** - HTTP client for API requests
 - **Vite** - Fast build tool and development server
-- **Bootstrap** - CSS framework for responsive design
 - **Modern CSS3** - Custom styling with gradients, animations, and responsive layouts
 
 ### **Backend**
@@ -129,7 +128,6 @@ ECommerce Store/
 │
 ├── .gitignore                       # Git ignore rules (excludes .env files)
 ├── README.MD                        # Project documentation
-└── Documentation Files/             # Styling guides and references
 ```
 
 ---
@@ -389,14 +387,6 @@ For issues, questions, or suggestions, please:
 
 ---
 
-## 🙏 Acknowledgments
-
-- React community for excellent documentation
-- Express.js for robust server framework
-- MongoDB for flexible data storage
-- All contributors and supporters
-
----
 
 ## 📊 Project Stats
 
@@ -420,4 +410,4 @@ For issues, questions, or suggestions, please:
 
 ---
 
-**Status: ✅ Active Development**
+**Status:  Improvement Phase**
