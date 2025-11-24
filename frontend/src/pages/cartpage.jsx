@@ -11,8 +11,8 @@ function CartPage() {
         const user = JSON.parse(userString);
         const theme = { orderItems: cart, totalPrice, user: user._id }
         const response = await axios.post("http://localhost:5000/api/v1/order",theme)
-        alert("Order Placed")
-        clearCart()
+        alert("Order Placed");
+        clearCart();
     }
     return (
         <div className="cart-page">
